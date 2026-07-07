@@ -53,7 +53,7 @@ export const BurgerMenu = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 h={27}
                 w={116}
-                _hover={{ color: 'blue)' }}
+                _hover={{ color: 'blue' }}
               >
                 <Link to="/register">Register</Link>
               </Text>

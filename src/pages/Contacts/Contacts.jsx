@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { fetchContacts } from '../../redux/contactsOperations';
 import {
+  selectContactError,
   selectContactItems,
   selectContactLoading,
 } from '../../redux/selectors';
@@ -11,11 +12,12 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import Filter from '../../components/Filter/Filter';
 import ContactList from '../../components/ContactList/ContactList';
 import { Box, Heading, Text } from '@chakra-ui/react';
-import { centerConteinerStyles } from 'services/stylesChakra';
+import { centerContainerStyles } from 'services/stylesChakra';
 
 export default function Contacts() {
   const contacts = useSelector(selectContactItems);
   const isLoading = useSelector(selectContactLoading);
+  const error = useSelector(selectContactError);
 
   const dispatch = useDispatch();
 
@@ -25,7 +27,7 @@ export default function Contacts() {
 
   return (
     <>
-      <Box {...centerConteinerStyles} flexDirection={'column'} pb={[0, 0, 30]}>
+      <Box {...centerContainerStyles} flexDirection={'column'} pb={[0, 0, 30]}>
         <Heading as="h2" mt={30} mb={30} fontSize={[34, 34, 34, 40, 44]}>
           Contacts
         </Heading>
@@ -36,7 +38,7 @@ export default function Contacts() {
           gap={[0, 0, 10, 10, 20]}
         >
           <Box
-            {...centerConteinerStyles}
+            {...centerContainerStyles}
             flexDirection={'column'}
             borderBottom={['1px solid white', '1px solid white', 'none']}
             pb={[30, 30, 0]}
@@ -70,18 +72,16 @@ export default function Contacts() {
               Name / Phone
             </Text>
             {isLoading && (
-              <Box {...centerConteinerStyles} pt={'50%'}>
+              <Box {...centerContainerStyles} pt={'50%'}>
                 <Spinner />
               </Box>
             )}
-            {contacts.length === 0 && !isLoading && (
-              <Text
-                textAlign={'center'}
-                pt={[0, 0, 30]}
-                fontSize={[16, 16, 18, 20, 22]}
-              >
-                Your contacts list is empty.
-              </Text>
+            {error && !isLoading && (
+              <Text>Failed to load contacts. Please try again later.</Text>
+            )}
+
+            {contacts.length === 0 && !isLoading && !error && (
+              <Text>Your contacts list is empty.</Text>
             )}
             {contacts.length > 0 && !isLoading && <ContactList />}
           </Box>

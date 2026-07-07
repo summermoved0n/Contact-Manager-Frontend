@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "contact-manager",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://summermoved0n.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://summermoved0n.github.io/Contact-Manager-Frontend/",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",

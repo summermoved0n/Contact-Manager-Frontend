@@ -18,7 +18,7 @@ export default function ContactList() {
         });
       })
       .catch(() => {
-        toast.success('Oops, something went wrong!');
+        toast.error('Oops, something went wrong!');
       });
   };
 

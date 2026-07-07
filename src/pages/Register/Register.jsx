@@ -8,7 +8,7 @@ import {
   FormHelperText,
   Heading,
 } from '@chakra-ui/react';
-import { centerConteinerStyles, CustomInput } from 'services/stylesChakra';
+import { centerContainerStyles, CustomInput } from 'services/stylesChakra';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -61,7 +61,7 @@ export default function Register() {
       </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl
-          {...centerConteinerStyles}
+          {...centerContainerStyles}
           flexDirection={'column'}
           gap={3}
         >

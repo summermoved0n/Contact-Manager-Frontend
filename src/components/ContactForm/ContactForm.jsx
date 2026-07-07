@@ -6,9 +6,11 @@ import toast from 'react-hot-toast';
 import { Button, FormControl, FormLabel } from '@chakra-ui/react';
 import {
   buttonsStyles,
-  centerConteinerStyles,
+  centerContainerStyles,
   CustomInput,
 } from 'services/stylesChakra';
+
+const PHONE_NUMBER_MAX_LENGTH = 10;
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -24,7 +26,7 @@ export default function ContactForm() {
         break;
 
       case 'number':
-        setNumber(value);
+        setNumber(value.replace(/\D/g, '').slice(0, PHONE_NUMBER_MAX_LENGTH));
         break;
 
       default:
@@ -54,7 +56,7 @@ export default function ContactForm() {
         });
       })
       .catch(() => {
-        toast.success('Oops, something went wrong!');
+        toast.error('Oops, something went wrong!');
       });
   };
 
@@ -74,7 +76,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormControl {...centerConteinerStyles} flexDirection={'column'} gap={5}>
+      <FormControl {...centerContainerStyles} flexDirection={'column'} gap={5}>
         <FormLabel m={0} htmlFor={inputNameId}>
           <CustomInput
             type="text"
@@ -95,6 +97,10 @@ export default function ContactForm() {
             id={inputNumberId}
             placeholder="Number"
             required
+            inputMode="numeric"
+            maxLength={PHONE_NUMBER_MAX_LENGTH}
+            pattern="[0-9]*"
+            title="Phone number can contain digits only."
             onChange={handleChange}
             autoComplete="off"
           />

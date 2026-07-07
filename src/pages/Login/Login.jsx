@@ -8,7 +8,7 @@ import {
   FormHelperText,
   Heading,
 } from '@chakra-ui/react';
-import { centerConteinerStyles, CustomInput } from 'services/stylesChakra';
+import { centerContainerStyles, CustomInput } from 'services/stylesChakra';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -49,7 +49,7 @@ export default function Login() {
       </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl
-          {...centerConteinerStyles}
+          {...centerContainerStyles}
           flexDirection={'column'}
           gap={3}
         >

@@ -1,113 +1,96 @@
-# React homework template
+# Contact Manager
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+A responsive contact management application built with React. Users can create
+an account, sign in, maintain a personal contact list, and quickly find saved
+contacts.
 
-## Создание репозитория по шаблону
+[Live demo](https://summermoved0n.github.io/Contact-Manager-Frontend/)
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+## Features
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+- User registration, sign-in, and sign-out
+- Persistent authentication between browser sessions
+- Protected routes for authenticated users
+- Add and delete personal contacts
+- Filter contacts by name
+- Loading indicators and toast notifications
+- Responsive desktop and mobile interface
+- Automatic deployment to GitHub Pages
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+## Technologies
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+- React 18
+- Redux Toolkit and React Redux
+- Redux Persist
+- React Router
+- Axios
+- Chakra UI and Emotion
+- Styled Components
+- React Hot Toast
+- Create React App
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+The application uses the
+[GoIT Connections API](https://connections-api.goit.global) for authentication
+and contact storage.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+### Prerequisites
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+Install a current LTS version of [Node.js](https://nodejs.org/), which includes
+npm.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+### Installation
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
-
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
-
-## Деплой
-
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
+```bash
+git clone https://github.com/summermoved0n/Contact-Manager.git
+cd Contact-Manager
+npm install
 ```
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+### Development
 
-![GitHub Pages settings](./assets/repo-settings.png)
+Start the local development server:
 
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
+```bash
+npm start
 ```
 
-## Как это работает
+Open
+[http://localhost:3000/Contact-Manager-Frontend](http://localhost:3000/Contact-Manager-Frontend)
+in your browser.
 
-![How it works](./assets/how-it-works.png)
+## Available Scripts
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+| Command | Description |
+| --- | --- |
+| `npm start` | Starts the development server |
+| `npm run build` | Creates an optimized production build |
+| `npm run lint:js` | Runs ESLint for JavaScript and JSX files |
+| `npm test` | Starts the test runner in interactive mode |
+
+## Project Structure
+
+```text
+src/
+├── components/    Reusable interface and routing components
+├── images/        Application background images
+├── pages/         Home, login, registration, and contacts pages
+├── redux/         Store, slices, selectors, and async operations
+├── services/      API client and shared styles
+└── index.js       Application entry point
+```
+
+## Deployment
+
+Pushes to the `main` branch trigger the GitHub Actions workflow. It installs
+dependencies, runs ESLint, creates a production build, and deploys the `build`
+directory to the `gh-pages` branch.
+
+To create the production build locally:
+
+```bash
+npm run build
+```
+
+## Author
+
+[summermoved0n](https://github.com/summermoved0n)

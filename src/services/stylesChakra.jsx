@@ -69,7 +69,7 @@ export const CustomImage = chakra('div', {
   },
 });
 
-export const mainConteinerStyles = {
+export const mainContainerStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -88,7 +88,7 @@ export const navigationStyles = {
   mb: '10px',
 };
 
-export const centerConteinerStyles = {
+export const centerContainerStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

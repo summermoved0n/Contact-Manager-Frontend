@@ -19,9 +19,9 @@ import {
 
 import {
   BurgerButton,
-  mainConteinerStyles,
+  mainContainerStyles,
   navigationStyles,
-  centerConteinerStyles,
+  centerContainerStyles,
 } from 'services/stylesChakra';
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 import Footer from 'components/Footer/Footer';
@@ -31,16 +31,16 @@ import { Spinner } from 'components/Spinner/Spinner';
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectAuthLoggedIn);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const authloading = useSelector(selectAuthLoading);
+  const authLoading = useSelector(selectAuthLoading);
 
   return (
     <>
       <div>
         <Toaster position="bottom-right" reverseOrder={false} />
       </div>
-      <Box {...mainConteinerStyles}>
+      <Box {...mainContainerStyles}>
         <Box {...navigationStyles}>
-          <Box {...centerConteinerStyles} gap={2}>
+          <Box {...centerContainerStyles} gap={2}>
             <Text fontWeight={700} fontSize={22}>
               Phonebook
             </Text>
@@ -68,14 +68,14 @@ export const Navigation = () => {
                 <UserMenu />
               </BreadcrumbItem>
             ) : (
-              <BreadcrumbItem {...centerConteinerStyles} gap={3}>
+              <BreadcrumbItem {...centerContainerStyles} gap={3}>
                 <StyledLink to="/login">Login</StyledLink>
                 <StyledLink to="/register">Register</StyledLink>
               </BreadcrumbItem>
             )}
           </Breadcrumb>
         </Box>
-        {authloading ? (
+        {authLoading ? (
           <Box>
             <Spinner />
           </Box>

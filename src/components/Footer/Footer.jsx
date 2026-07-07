@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Box textAlign={'center'} mt={10}>
       <Text>
-        @ created by{' '}
+        © Created by{' '}
         <Link
           target="_blank"
           rel="noopener noreferrer"

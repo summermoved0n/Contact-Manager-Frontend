@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthUser } from '../../redux/auth/authSelectors';
 import { logOut } from '../../redux/auth/authOperations';
 import { Box, Button, Text } from '@chakra-ui/react';
-import { buttonsStyles, centerConteinerStyles } from 'services/stylesChakra';
+import { buttonsStyles, centerContainerStyles } from 'services/stylesChakra';
 
 export const UserMenu = () => {
   const { email } = useSelector(selectAuthUser);
@@ -11,7 +11,7 @@ export const UserMenu = () => {
 
   return (
     <Box
-      {...centerConteinerStyles}
+      {...centerContainerStyles}
       flexDirection={['column', 'column', 'row']}
       gap={2}
     >
