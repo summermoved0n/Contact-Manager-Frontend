@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://connections-api.goit.global';
-axios.defaults.baseURL = 'http://localhost:3210/api';
+axios.defaults.baseURL =
+  'https://contact-manager-backend-fb7b.onrender.com/api';
 
 const token = {
   set(token) {

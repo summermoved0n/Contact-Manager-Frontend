@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/authOperations';
 import {
@@ -16,6 +17,7 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleInputChange = e => {
     const { name, value } = e.currentTarget;
@@ -50,8 +52,10 @@ export default function Register() {
 
       await dispatch(register(submitData)).unwrap();
 
-      toast.success('Account created successfully!');
+      toast.success('Account created successfully! Please log in.');
       resetForm();
+
+      navigate('/login');
     } catch (error) {
       toast.error(error?.message || 'Registration failed.');
     }
