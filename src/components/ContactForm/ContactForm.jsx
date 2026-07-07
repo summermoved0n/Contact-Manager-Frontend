@@ -34,7 +34,7 @@ export default function ContactForm() {
     }
   };
 
-  const addContact = data => {
+  const addContact = async data => {
     const { name, number } = data;
     const getName = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -44,19 +44,21 @@ export default function ContactForm() {
       toast.error(`'${name}' is already in contacts!`);
       return;
     }
+
     const contact = {
       name,
-      number,
+      phone: number,
     };
+
     dispatch(postContact(contact))
       .unwrap()
       .then(() => {
-        toast(`Contact '${name}' was successfully added!`, {
+        toast.success(`Contact '${name}' was successfully added!`, {
           icon: '👏',
         });
       })
-      .catch(() => {
-        toast.error('Oops, something went wrong!');
+      .catch(error => {
+        toast.error(error?.message || 'Wrong data.');
       });
   };
 

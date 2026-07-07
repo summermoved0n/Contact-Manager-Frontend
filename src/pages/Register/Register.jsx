@@ -9,6 +9,7 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { centerContainerStyles, CustomInput } from 'services/stylesChakra';
+import toast from 'react-hot-toast';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -37,15 +38,23 @@ export default function Register() {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const submitData = {
-      name,
-      email,
-      password,
-    };
-    dispatch(register(submitData));
-    resetForm();
+
+    try {
+      const submitData = {
+        name,
+        email,
+        password,
+      };
+
+      await dispatch(register(submitData)).unwrap();
+
+      toast.success('Account created successfully!');
+      resetForm();
+    } catch (error) {
+      toast.error(error?.message || 'Registration failed.');
+    }
   };
 
   const resetForm = () => {

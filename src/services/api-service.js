@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.goit.global';
+// axios.defaults.baseURL = 'https://connections-api.goit.global';
+axios.defaults.baseURL = 'http://localhost:3210/api';
 
 export async function getFetchContacts() {
   const { data } = await axios.get('/contacts');

@@ -1,7 +1,7 @@
 import { Box, Button, ListItem, Text } from '@chakra-ui/react';
 import { buttonsStyles } from 'services/stylesChakra';
 
-export default function ContactListItem({ id, name, number, deleteContact }) {
+export default function ContactListItem({ id, name, phone, deleteContact }) {
   return (
     <ListItem
       bgColor={['text', 'text', 'transparent']}
@@ -32,7 +32,7 @@ export default function ContactListItem({ id, name, number, deleteContact }) {
           color={['input', 'input', 'text']}
           fontSize={[16, 16, 18, 18, 20]}
         >
-          {number}
+          {phone}
         </Text>
       </Box>
       <Button

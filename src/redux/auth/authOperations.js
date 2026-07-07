@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import toast from 'react-hot-toast';
 
-axios.defaults.baseURL = 'https://connections-api.goit.global';
+// axios.defaults.baseURL = 'https://connections-api.goit.global';
+axios.defaults.baseURL = 'http://localhost:3210/api';
 
 const token = {
   set(token) {
@@ -17,12 +17,9 @@ export const register = createAsyncThunk(
   'auth/register',
   async (registerData, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/users/signup', registerData);
-      toast.success(`Welcome to your new account, "${data.user.name}". 🖐`);
-      token.set(data.token);
+      const { data } = await axios.post('/users/register', registerData);
       return data;
     } catch (error) {
-      toast.error('Something went wrong. Try entering the data again.');
       return rejectWithValue(error.response?.data ?? error.message);
     }
   }
@@ -30,14 +27,12 @@ export const register = createAsyncThunk(
 
 export const logIn = createAsyncThunk(
   'auth/login',
-  async (registerData, { rejectWithValue }) => {
+  async (loginData, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/users/login', registerData);
+      const { data } = await axios.post('/users/login', loginData);
       token.set(data.token);
-      toast.success(`Welcome to your account, "${data.user.name}". 🖐`);
       return data;
     } catch (error) {
-      toast.error('Something went wrong. Try entering the data again.');
       return rejectWithValue(error.response?.data ?? error.message);
     }
   }

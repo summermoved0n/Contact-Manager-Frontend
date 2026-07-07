@@ -9,27 +9,27 @@ export default function ContactList() {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectVisibleContacts);
 
-  const deleteContact = (id, name) => {
-    dispatch(removeContact(id))
+  const deleteContact = async (id, name) => {
+    await dispatch(removeContact({ _id: id }))
       .unwrap()
       .then(() => {
-        toast(`You deleted '${name}'!`, {
+        toast.success(`Removed '${name}'!`, {
           icon: '💔',
         });
       })
-      .catch(() => {
-        toast.error('Oops, something went wrong!');
+      .catch(error => {
+        toast.error(error?.message || 'Login failed.');
       });
   };
 
   return (
     <List spacing={[3, 3, 2, 2, 2]} pt={[0, 0, 30]}>
-      {filteredContacts.map(({ id, name, number }) => (
+      {filteredContacts.map(({ _id, name, phone }) => (
         <ContactListItems
-          key={id}
-          id={id}
+          key={_id}
+          id={_id}
           name={name}
-          number={number}
+          phone={phone}
           deleteContact={deleteContact}
         />
       ))}

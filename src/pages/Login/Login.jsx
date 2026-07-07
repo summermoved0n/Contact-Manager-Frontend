@@ -9,6 +9,7 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { centerContainerStyles, CustomInput } from 'services/stylesChakra';
+import toast from 'react-hot-toast';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -31,15 +32,19 @@ export default function Login() {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const submitData = {
-      email,
-      password,
-    };
-    dispatch(logIn(submitData));
-    setEmail('');
-    setPassword('');
+    try {
+      const submitData = {
+        email,
+        password,
+      };
+      await dispatch(logIn(submitData)).unwrap();
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      toast.error(error?.message || 'Login failed.');
+    }
   };
 
   return (
