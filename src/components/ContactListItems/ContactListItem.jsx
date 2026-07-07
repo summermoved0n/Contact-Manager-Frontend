@@ -17,9 +17,11 @@ export default function ContactListItem({ id, name, phone, deleteContact }) {
       <Box
         display={'flex'}
         flexDirection={['column', 'column', 'column', 'row']}
+        justifyContent={'space-between'}
         alignItems={['center', 'flex-start', 'flex-start', 'center']}
         flexWrap={'wrap'}
         gap={[0, 0, 0, 2, 4]}
+        w={[180, 180, 180, 400, 420]}
       >
         <Text
           color={['black', 'black', 'text']}
