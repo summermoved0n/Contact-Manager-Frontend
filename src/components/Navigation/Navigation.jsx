@@ -42,7 +42,7 @@ export const Navigation = () => {
         <Box {...navigationStyles}>
           <Box {...centerContainerStyles} gap={2}>
             <Text fontWeight={700} fontSize={22}>
-              Phonebook
+              ContactManager
             </Text>
             <FaAddressBook size={22} color="#f7f7f7" />
           </Box>

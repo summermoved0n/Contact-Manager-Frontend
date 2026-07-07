@@ -1,10 +1,25 @@
-# Contact Manager
+# Contact Manager Frontend
 
-A responsive contact management application built with React. Users can create
-an account, sign in, maintain a personal contact list, and quickly find saved
+Responsive React frontend for the Contact Manager application. Users can create
+an account, sign in, keep a private contact list, and quickly filter saved
 contacts.
 
-[Live demo](https://summermoved0n.github.io/Contact-Manager-Frontend/)
+## Preview
+
+![Contact Manager](./assets/screenshots/contact-manager.png)
+
+## Live Demo
+
+- **Frontend:** https://summermoved0n.github.io/Contact-Manager-Frontend/
+- **Backend API:** https://contact-manager-backend-fb7b.onrender.com
+- **Swagger Docs:** https://contact-manager-backend-fb7b.onrender.com/api-docs
+
+## Related Repositories
+
+- **Frontend Repository:**
+  https://github.com/summermoved0n/Contact-Manager-Frontend
+- **Backend Repository:**
+  https://github.com/summermoved0n/Contact-Manager-Backend
 
 ## Features
 
@@ -17,21 +32,34 @@ contacts.
 - Responsive desktop and mobile interface
 - Automatic deployment to GitHub Pages
 
-## Technologies
+## Tech Stack
 
 - React 18
-- Redux Toolkit and React Redux
+- Redux Toolkit
+- React Redux
 - Redux Persist
 - React Router
 - Axios
-- Chakra UI and Emotion
+- Chakra UI
+- Emotion
 - Styled Components
 - React Hot Toast
-- Create React App
 
-The application uses the
-[GoIT Connections API](https://connections-api.goit.global) for authentication
-and contact storage.
+## Backend Integration
+
+The application communicates with the Contact Manager Backend API for user
+authentication and contact management.
+
+### Main Endpoints
+
+- `/api/users/register`
+- `/api/users/login`
+- `/api/users/logout`
+- `/api/users/current`
+- `/api/contacts`
+- `/api/contacts/:id`
+
+## Getting Started
 
 ### Prerequisites
 
@@ -41,49 +69,48 @@ npm.
 ### Installation
 
 ```bash
-git clone https://github.com/summermoved0n/Contact-Manager.git
-cd Contact-Manager
+git clone https://github.com/summermoved0n/Contact-Manager-Frontend.git
+cd Contact-Manager-Frontend
 npm install
 ```
 
 ### Development
 
-Start the local development server:
+The project is configured for automatic deployment to GitHub Pages.
 
 ```bash
 npm start
 ```
 
-Open
-[http://localhost:3000/Contact-Manager-Frontend](http://localhost:3000/Contact-Manager-Frontend)
-in your browser.
+Open the application in your browser:
+
+http://localhost:3000
 
 ## Available Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm start` | Starts the development server |
-| `npm run build` | Creates an optimized production build |
-| `npm run lint:js` | Runs ESLint for JavaScript and JSX files |
-| `npm test` | Starts the test runner in interactive mode |
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm start`       | Starts the development server              |
+| `npm run build`   | Creates an optimized production build      |
+| `npm run lint:js` | Runs ESLint for JavaScript and JSX files   |
+| `npm test`        | Starts the test runner in interactive mode |
 
 ## Project Structure
 
 ```text
 src/
-├── components/    Reusable interface and routing components
-├── images/        Application background images
-├── pages/         Home, login, registration, and contacts pages
-├── redux/         Store, slices, selectors, and async operations
-├── services/      API client and shared styles
-└── index.js       Application entry point
+|-- components/    Reusable interface and routing components
+|-- images/        Application background images
+|-- pages/         Home, login, registration, and contacts pages
+|-- redux/         Store, slices, selectors, and async operations
+|-- services/      API client and shared styles
+`-- index.js       Application entry point
 ```
 
 ## Deployment
 
-Pushes to the `main` branch trigger the GitHub Actions workflow. It installs
-dependencies, runs ESLint, creates a production build, and deploys the `build`
-directory to the `gh-pages` branch.
+The project is configured for GitHub Pages deployment through the `homepage`
+field in `package.json`.
 
 To create the production build locally:
 
@@ -93,4 +120,6 @@ npm run build
 
 ## Author
 
-[summermoved0n](https://github.com/summermoved0n)
+**Dmytro Shulzhenko**
+
+GitHub: https://github.com/summermoved0n
