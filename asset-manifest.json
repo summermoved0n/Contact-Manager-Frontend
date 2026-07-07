@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Contact-Manager-Frontend/static/js/main.402b3270.js",
+    "main.js": "/Contact-Manager-Frontend/static/js/main.3f78ad0f.js",
     "static/media/phonebook_bg.jpg": "/Contact-Manager-Frontend/static/media/phonebook_bg.3d2c44e3c3326cc3158c.jpg",
     "static/media/bg-book-mob.jpg": "/Contact-Manager-Frontend/static/media/bg-book-mob.2064883c0c16cfbf4a72.jpg",
     "index.html": "/Contact-Manager-Frontend/index.html",
-    "main.402b3270.js.map": "/Contact-Manager-Frontend/static/js/main.402b3270.js.map"
+    "main.3f78ad0f.js.map": "/Contact-Manager-Frontend/static/js/main.3f78ad0f.js.map"
   },
   "entrypoints": [
-    "static/js/main.402b3270.js"
+    "static/js/main.3f78ad0f.js"
   ]
 }
